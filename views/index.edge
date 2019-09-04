@@ -1,0 +1,92 @@
+@layout('layouts.app')
+
+@section('content')
+<!--phone-->
+@if(messages.IncorrectPwd)
+<script>
+    function myFunction() {
+        swal({
+            title: "You Have Entered an Incorrect Password !!",
+            timer: 6000,
+            showConfirmButton: false
+        });
+    };
+</script>
+@endif
+@if(messages.IncorrectUiD)
+<script>
+    function myFunction() {
+        swal({
+            title: "You Have Entered an Incorrect Unique ID !!",
+            timer: 6000,
+            showConfirmButton: false
+        });
+    };
+</script>
+@endif
+@if(messages.IncorrectMobile)
+<script>
+    function myFunction() {
+        swal({
+            title: "You Have Entered an Incorrect Mobile Number !!",
+            timer: 6000,
+            showConfirmButton: false
+        });
+    };
+</script>
+@endif
+<div class="phone" id="mobileappagileits" style="background: #123f6d;">
+    <div class="container">
+        <div class="col-md-6">
+            <img src="images/ph1.png" class="img-responsive" alt="" />
+        </div>
+        <div class="col-md-6 phone-text">
+            <h4>Online Payment solutions</h4>
+            <p class="subtitle">Simple and Fast Payments</p>
+            <div class="text-1">
+                <h5>Recharge</h5>
+                <p>Recharge your Mobile, DTH, Datacard etc...</p>
+            </div>
+            <div class="text-1">
+                <h5>Paybills</h5>
+                <p>Pay your Bills(Broadband, Landline etc...)</p>
+            </div>
+            <div class="text-1">
+                <h5>Mobile & Mobile Accessories</h5>
+                <p>Buy Now</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!--//phone-->
+
+
+<!-- Support content -->
+<div class="w3l-support">
+    <div class="container">
+        <div class="col-md-5 w3_agile_support_left">
+            <img src="images/cus.jpg" alt=" " class="img-responsive" />
+        </div>
+        <div class="col-md-7 w3_agile_support_right">
+            <h5>Online Recharge</h5>
+            <h3 style="color:#123f6d">24/7 Customer Service Support</h3><br>
+            <br>
+            <div class="agile_more">
+                <a href="#" class="type-4">
+                    <span> Support </span>
+                    <span> Support </span>
+                    <span> Support </span>
+                    <span> Support </span>
+                    <span> Support </span>
+                    <span> Support </span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- //Support content -->
+
+@endsection

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>TMT PAYMENTS: Profile</title>
+
+  <!-- ================= Favicon ================== -->
+  <!-- Standard -->
+  <link rel="shortcut icon" href="https://placehold.it/64.png/000/fff">
+  <!-- Retina iPad Touch Icon-->
+  <link rel="apple-touch-icon" sizes="144x144" href="https://placehold.it/144.png/000/fff">
+  <!-- Retina iPhone Touch Icon-->
+  <link rel="apple-touch-icon" sizes="114x114" href="https://placehold.it/114.png/000/fff">
+  <!-- Standard iPad Touch Icon-->
+  <link rel="apple-touch-icon" sizes="72x72" href="https://placehold.it/72.png/000/fff">
+  <!-- Standard iPhone Touch Icon-->
+  <link rel="apple-touch-icon" sizes="57x57" href="https://placehold.it/57.png/000/fff">
+
+  <!-- Styles -->
+  <link href="/assets/css/lib/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/css/lib/themify-icons.css" rel="stylesheet">
+  <link href="/assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+  <link href="/assets/css/lib/bootstrap.min.css" rel="stylesheet">
+
+  <link href="/assets/css/lib/helper.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+    <div class="nano">
+      <div class="nano-content">
+        <div class="logo"><a href="#"><span><img src="/assets/images/logo.png" alt="" height="80px"
+                width="90px" /></span></a></div>
+        <ul>
+          <li class="label">Main</li>
+          @if(Admin)
+          <li><a href="/auth/login"><i class="ti-home"></i>Admin
+              Dashboard <span class="badge badge-primary"></span></a>
+            @endif
+            @if(!Admin)
+          <li class="active"><a href="/auth/login"><i class="ti-home"></i> Dashboard
+              <span class="badge badge-primary"></span></a>
+          </li>
+          @endif
+          <li class="label">Services</li>
+          <li><a href="/topUp"><i class="ti-money"></i> Money Transfer </a></li>
+          <li><a class="sidebar-sub-toggle"><i class="ti-mobile"></i> Mobile Recharge <span
+                class="sidebar-collapse-icon ti-angle-down"></span></a>
+            <ul>
+              <li><a href="#">Pre Paid</a></li>
+              <li><a href="#">Post Paid</a></li>
+            </ul>
+          </li>
+          <li><a href="#"><i class="ti-blackboard"></i> DTH</a></li>
+          <li><a href="#"><i class="ti-car"></i> Rent a car</a></li>
+          <li class="label">Features</li>
+          @if(Admin)
+          <li class="active"><a class="sidebar-sub-toggle"><i class="ti-face-smile"></i> Distributors <span
+                class="sidebar-collapse-icon ti-angle-down"></span></a>
+            <ul>
+              <li><a href="/register">Register New Distributor</a></li>
+              <li><a href="/auth/distubitors">Distributors Details</a></li>
+            </ul>
+          </li>
+          @endif
+          <li><a class="sidebar-sub-toggle"><i class="ti-face-smile"></i>Top-Up<span
+                class="sidebar-collapse-icon ti-angle-down"></span></a>
+            <ul>
+              <li><a href="#">Load Wallet</a></li>
+              <li><a href="#">Request Wallet</a></li>
+            </ul>
+          </li>
+          <li><a href="/auth/viewProfile"><i class="ti-user"></i> Profile</a></li>
+          <li><a href="/auth/transactions"><i class="ti-notepad"></i> Transactions</a>
+          <li><a href="/auth/contactUs"><i class="ti-file"></i>ContactUs</a></li>
+          <li><a href="/auth/logout"><i class="ti-close"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /# sidebar -->
+
+
+  <div class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="float-left">
+            <div class="hamburger sidebar-toggle">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="float-right">
+            <ul>
+              <li class="header-icon dib"><span class="user-avatar">{{users.name}} <i
+                    class="ti-angle-down f-s-10"></i></span>
+                <div class="drop-down dropdown-profile">
+                  <div class="dropdown-content-body">
+                    <ul>
+                      <li><a href="/auth/viewProfile"><i class="ti-user"></i>
+                          <span>Profile</span></a></li>
+                      <li><a href="/auth/logout"><i class="ti-power-off"></i> <span>Logout</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="content-wrap">
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 p-r-0 title-margin-right">
+            <div class="page-header">
+              <div class="page-title">
+                <h1>Hello, <span>Welcome Here</span></h1>
+              </div>
+            </div>
+          </div>
+          <!-- /# column -->
+          <div class="col-lg-4 p-l-0 title-margin-left">
+            <div class="page-header">
+              <div class="page-title">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">App-Profile</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- /# column -->
+        </div>
+        <!-- /# row -->
+        <section id="main-content">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="user-profile">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <div class="user-photo m-b-30">
+                          <img class="img-fluid" src={{users.profilePicture}} alt="" />
+                        </div>
+                        <div class="custom-tab user-profile-tab">
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="1">
+                              <div class="contact-information">
+                                <h4>Contact information</h4>
+                                <div class="phone-content">
+                                  <span class="contact-title">Distributor Name:</span>
+                                  <span class="phone-number">{{users.name}}</span>
+                                </div>
+                                <div class="phone-content">
+                                  <span class="contact-title">Phone:</span>
+                                  <span class="phone-number">{{users.number}}</span>
+                                </div>
+                                <div class="email-content">
+                                  <span class="contact-title">Email:</span>
+                                  <span class="contact-email">{{users.email}}</span>
+                                </div>
+                                <div class="email-content">
+                                  <span class="contact-title">Kyc Details:</span>
+                                  <span class="contact-email">{{users.KYCStatus}}</span>
+                                </div>
+                                <div class="email-content">
+                                  <span class="contact-title">Distributor Status:</span>
+                                  <span class="contact-email">{{users.memberstatus}}</span>
+                                </div>
+                                <div class="address-content">
+                                  <span class="contact-title">Address:</span>
+                                  <span class="mail-address">{{users.contactaddress}}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <h1 style="text-transform: uppercase;">{{users.shopname}}</h1>
+                        <div class="user-profile-name">Unique ID: {{users.uniqueId}}</div><br>
+                        <div class="user-profile-name">Shop Adress: {{users.shopaddress}}</div><br>
+                        <div class="user-Location"><i class="ti-location-pin"></i> {{users.pincode}}</div><br>
+                        <div class="user-profile-name">Pan Number :{{users.pan}}</div><br>
+                        @if(Admin)
+                        <button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5" data-toggle="modal"
+                          data-target="#AdminModal">Admin Update</button>
+                        @endif
+                        @if(!Admin)
+                        <button type="button" class="btn btn-primary btn-rounded m-b-10 m-l-5" data-toggle="modal"
+                          data-target="#UserModal">Update</button>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <h5>Documents
+            </div>
+            <div class="col-lg-6">
+              <div class="user-photo m-b-30">
+                <img class="img-fluid" src="{{users.idproof}}" alt="">
+                <div>Id Proof</div>
+              </div>
+
+            </div>
+            <div class="col-lg-6">
+              <div class="user-photo m-b-30">
+                <img class="img-fluid" src="{{users.addressproof}}" alt="">
+                <div>Adress Proof</div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- /# row -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="footer">
+            <p>2019 © TMT PAYMENTS USER Board. - Developed by Alpha Technologies <a href="#">example.com</a></p>
+          </div>
+        </div>
+      </div>
+      </section>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="AdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Update User Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="col-lg-12">
+          <form action="/AdmiUusers/update/{{users._id}}" method="POST" encType="multipart/form-data">
+            <div class="row">
+              <div class="form-group">
+                <label>Member Name</label>
+                <input type="text" value="{{users.name}}" name="name" required class="form-control"
+                  placeholder="User Name">
+              </div>
+              <div class="form-group">
+                <label>Unique ID</label>
+                <input type="text" value="{{users.uniqueId}}" name="uniqueId" required class="form-control"
+                  placeholder="Unique ID">
+              </div>
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" value="{{users.email}}" name="email" required class="form-control"
+                  placeholder="Email">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" required class="form-control" placeholder="password">
+              </div>
+              <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="text" value="{{users.number}}" name="number" required class="form-control"
+                  placeholder="Mobile Number">
+              </div>
+              <div class="form-group">
+                <label>Pan Number</label>
+                <input type="text" value="{{users.pan}}" name="pan" class="form-control" placeholder="Pan Number">
+              </div>
+              <div class="form-group">
+                <label>Shop Name</label>
+                <input type="text" value="{{users.shopname}}" name="shopname" required class="form-control"
+                  placeholder="Shop Name">
+              </div>
+
+              <div class="form-group">
+                <label>Pin Code</label>
+                <input type="text" value="{{users.pincode}}" name="pincode" class="form-control" placeholder="Pin Code">
+              </div>
+
+              <div class="form-group">
+                <input type="text" value="{{users.role}}" name="role" class="form-control" hidden>
+              </div>
+              <div class="form-group">
+                <label>Contact Address</label>
+                <textarea value="{{users.contactaddress}}" name="contactaddress" placeholder="Address"
+                  class="form-control">{{users.contactaddress}}</textarea>
+              </div>
+              <div class="form-group">
+                <label>Shop Address</label>
+                <textarea value="{{users.shopaddress}}" name="shopaddress" placeholder="Address"
+                  class="form-control">{{users.shopaddress}}</textarea>
+              </div>
+              <div class="form-group">
+                <input type="text" value="{{users.KYCStatus}}" name="KYCStatus" class="form-control" value="user">
+              </div>
+              <div class="form-group">
+                <input type="text" value="{{users.memberstatus}}" name="memberstatus" class="form-control" value="user">
+              </div>
+            </div>
+            <center> <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Update</button>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+      <input type="search" value="" placeholder="type keyword(s) here" />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+  <!-- jquery vendor -->
+  <script src="/assets/js/lib/jquery.min.js"></script>
+  <script src="/assets/js/lib/jquery.nanoscroller.min.js"></script>
+  <!-- nano scroller -->
+  <script src="/assets/js/lib/menubar/sidebar.js"></script>
+  <script src="/assets/js/lib/preloader/pace.min.js"></script>
+  <!-- sidebar -->
+  <script src="/assets/js/lib/bootstrap.min.js">
+
+
+  </script>
+  <!-- bootstrap -->
+
+
+  <script src="/assets/js/scripts.js"></script>
+  <!-- scripit init-->
+
+
+
+
+
+</body>
+
+
+</html>

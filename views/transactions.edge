@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from demo.themefisher.com/themefisher/focus/table-row-select.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2019 15:13:23 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Focus Admin: Data Table</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="https://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="https://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="https://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="https://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="/assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="/assets/css/lib/datatable/dataTables.bootstrap.min.html" rel="stylesheet" />
+    <link href="/assets/css/lib/datatable/buttons.bootstrap.min.html" rel="stylesheet" />
+    <link href="/assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="/assets/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/lib/helper.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css"
+        type="text/css" media="all" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="logo"><a href="#"><span style="color: rgb(25, 124, 216)" >TMT PAYMENTS</span></a></div>
+
+                <ul>
+                    <li class="label">Main</li>
+                    @if(Admin)
+                    <li><a href="/auth/login"><i class="ti-home"></i>Admin
+                            Dashboard <span></span></a>
+                        @endif
+                        @if(!Admin)
+                    <li class="active"><a href="/auth/login"><i class="ti-home"></i> Dashboard
+                            <span></span></a>
+                    </li>
+                    @endif
+
+                    <li class="label">Services</li>
+                    <li><a href="/topUp"><i class="ti-money"></i> Money Transfer </a></li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-mobile"></i> Mobile Recharge <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="#">Pre Paid</a></li>
+                            <li><a href="#">Post Paid</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="ti-blackboard"></i> DTH</a></li>
+                    <li><a href="#"><i class="ti-car"></i> Rent a car</a></li>
+
+                    <li class="label">Features</li>
+                    @if(Admin)
+                    <li><a class="sidebar-sub-toggle"><i class="ti-face-smile"></i> Distributors <span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="/register">Register New Distributor</a></li>
+                            <li><a href="/auth/distubitors">Distributors Details</a></li>
+                        </ul>
+                    </li>
+                    @endif
+                    <li><a class="sidebar-sub-toggle"><i class="ti-face-smile"></i>Top-Up<span
+                                class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="#">Load Wallet</a></li>
+                            <li><a href="#">Request Wallet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/auth/viewProfile"><i class="ti-user"></i> Profile</a></li>
+                    <li><a href="/auth/transactions"><i class="ti-notepad"></i> Transactions</a>
+                    <li><a href="/auth/contactUs"><i class="ti-file"></i>ContactUs</a></li>
+                    <li><a href="/auth/logout"><i class="ti-close"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+
+
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <ul>
+
+                            <li class="header-icon dib"><span class="user-avatar">{{users.name}} <i
+                                        class="ti-angle-down f-s-10"></i></span>
+                                <div class="drop-down dropdown-profile">
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li><a href="/auth/Viewprofile"><i class="ti-user"></i> <span>Profile</span></a>
+                                            </li>
+                                            <li><a href="#"><i class="ti-settings"></i> <span>Setting</span></a></li>
+                                            <li><a href="/auth/logout"><i class="ti-power-off"></i>
+                                                    <span>Logout</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Hello, <span>Welcome Here</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Transactions History</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+                <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-13">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>Transactions Table</h4>
+                                </div>
+                                <div class="bootstrap-data-table-panel">
+                                    <div class="myClass">
+                                        <div class="table-responsive">
+                                            <table id="row-select" class="display table table-borderd table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Invoice No</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                        <th>Mobile No</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Error Msg</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @each(transaction in transactions)
+                                                    <tr>
+                                                        <td>{{transaction.addedon}}</td>
+                                                        <td>{{transaction.txnid}}</td>
+                                                        <td class="price" >{{transaction.amount}}</td>
+                                                        <td><span
+                                                                class="badge badge-success"></span>{{transaction.status}}</span>
+                                                        </td>
+                                                        <td>{{transaction.phone}}</td>
+                                                        <td>{{transaction.firstname}}</td>
+                                                        <td>{{transaction.email}}</td>
+                                                        <td>{{transaction.error_Message}}</td>
+                                                    </tr>
+                                                    @endeach
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Invoice No</th>
+                                                        <th>Amount</th>
+                                                        <th>Status</th>
+                                                        <th>Mobile No</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Error Msg</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+
+                                            <h3 id="val"></h3>
+                                            <button onclick="calculate()"> Get Total</button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <script>
+                            function calculate() {
+                                $(".myClass").each(function () {
+                                    var table = document.getElementById("row-select"), sumVal = 0;
+                                    for (var i = 1; i < table.rows.length - 1; i++) {
+                                        sumVal = sumVal + parseInt(table.rows[i].cells[2].innerHTML);
+                                    }
+                                    document.getElementById("val").innerHTML = "Total Amount : ₹ " + sumVal;
+                                });
+                            }
+                            $(function () {
+                                $(".myClass").change();
+                            });
+
+                        </script>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+                                <p>2019 © TMT PAYMENTS USER Board. - Developed by Alpha Technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <!-- jquery vendor -->
+    <script src="/assets/js/lib/jquery.min.js"></script>
+    <script src="/assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <!-- nano scroller -->
+    <script src="/assets/js/lib/menubar/sidebar.js"></script>
+    <script src="/assets/js/lib/preloader/pace.min.js"></script>
+    <!-- sidebar -->
+
+    <!-- bootstrap -->
+
+    <script src="/assets/js/scripts.js"></script>
+    <!-- scripit init-->
+    <script src="/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="/assets/js/lib/data-table/dataTables.bootstrap.min.html"></script>
+    <script src="/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.bootstrap.min.html"></script>
+    <script src="/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="/assets/js/lib/data-table/datatables-init.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<!-- Mirrored from demo.themefisher.com/themefisher/focus/table-row-select.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Apr 2019 15:13:25 GMT -->
+
+</html>

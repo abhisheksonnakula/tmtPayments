@@ -1,0 +1,38 @@
+@layout('layouts.app')
+
+@section('content')
+
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center" style="background:#123f6d">
+    <div class="container">
+        <span class="agile-breadcrumbs"><a href="#"><i class="fa fa-home home_1"></i></a> /
+            <span>Feedback</span></span>
+    </div>
+</div>
+<!-- //breadcrumbs -->
+<!-- Feedback -->
+<div class="w3ls-feedback w3layouts-content">
+    <div class="container">
+        <h3 class="w3-head" style="color:#123f6d">Feedback</h3>
+        <div class="feed-back">
+            <h3>Tell us what you think of us</h3><br><br>
+
+            <div class="feed-back-form">
+                <form action="#" method="get">
+                    <span>User Details</span>
+                    <input type="text" placeholder="First Name" name="firstname" required="required" />
+                    <input type="text" placeholder="Last Name" name="lastname" required="required" />
+                    <input type="email" placeholder="Email" name="email" required="required" />
+                    <input type="tel" placeholder="Phone No" name="phoneno" required="required" />
+                    <span>Is there anything you would like to tell us?</span>
+                    <textarea onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}"
+                        required="">Message...</textarea>
+                    <input type="submit" style="background:#123f6d" value="Send Feedback">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // Feedback -->
+
+@endsection

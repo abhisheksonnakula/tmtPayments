@@ -1,0 +1,68 @@
+@layout('layouts.app')
+
+@section('content')
+<!-- breadcrumbs -->
+<div class="w3layouts-breadcrumbs text-center" style="background:#123f6d">
+  <div class="container">
+    <span class="agile-breadcrumbs"><a href="index.html"><i class="fa fa-home home_1"></i></a> / <span>Support</span></span>
+  </div>
+</div>
+<!-- //breadcrumbs -->
+
+<!-- Support-page -->
+    <div class="support w3layouts-content">
+  <div class="container">
+    <h3 class="w3-head" style="color:#123f6d">Support</h3>
+          <div class="col-md-8 w3ls-supportform">
+       <form action="#" method="get" name="sentMessage" id="contactForm" novalidate>
+              <select required>
+                    <option value="Payment">Payment</option>
+                    <option value="Recharge">Recharge</option>
+                    <option value="Booking">Booking</option>
+                    <option value="Account">Account</option>
+                    <option value="Others">Others</option>
+                  </select>
+        <div class="control-group form-group">
+          <div class="controls">
+            <input type="text" class="form-control" placeholder="Enter your Name" id="name" required data-validation-required-message="Please enter your name.">
+          </div>
+        </div>
+        <div class="control-group form-group">
+          <div class="controls">
+            <input type="email" class="form-control" placeholder="Enter your Email ID" id="email" required data-validation-required-message="Please enter your email address.">
+          </div>
+        </div>
+                  <div class="control-group form-group">
+                      <div class="controls">
+                          <input type="tel" class="form-control" name="phone" placeholder="Enter mobile Number" id="phone" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
+            <p class="help-block"></p>
+          </div>
+                  </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <textarea rows="10" cols="100" class="form-control" placeholder="Please write here" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+            </div>
+          </div>
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <button type="submit" class="submit btn btn-primary" style="background:#123f6d">Create Ticket</button>
+        <div class="clearfix"></div>	
+        </form>
+              </div>
+          <div class="col-md-4 agileits-support">
+              <ul>
+                  <li><strong>Call to:</strong> +91 9985414942 </li>
+                  <li><strong>Mail to:</strong> <a href="mailto:sninternet12@gmail.com">sn.internet12@gmail.com</a></li>
+              </ul>
+          </div>
+          <div class="clearfix"></div>
+<!-- js files for contact from validation -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+<!-- //js files for contact from validation -->
+
+</div>
+</div>
+  <!--//Support-page-->
+
+@endsection
